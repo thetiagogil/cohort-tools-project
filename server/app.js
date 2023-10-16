@@ -15,6 +15,8 @@ const cors = require("cors");
 // INITIALIZE EXPRESS APP - https://expressjs.com/en/4x/api.html#express
 const app = express();
 
+app.use(cors({ origin: ["http://localhost:5173", "http://localhost:5005"] }));
+
 // MIDDLEWARE
 // Research Team - Set up CORS middleware here:
 // ...
@@ -27,6 +29,7 @@ app.use(cookieParser());
 // ROUTES - https://expressjs.com/en/starter/basic-routing.html
 // Devs Team - Start working on the routes here:
 // ...
+
 app.get("/docs", (req, res) => {
   res.sendFile(__dirname + "/views/docs.html");
 });
@@ -38,8 +41,6 @@ app.get("/api/cohorts", (req, res) => {
 app.get("/api/students", (req, res) => {
   res.json(students);
 });
-
-app.use(cors({ origin: ["http://localhost:5173"] }));
 
 // START SERVER
 app.listen(PORT, () => {
