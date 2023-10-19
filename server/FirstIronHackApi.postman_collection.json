@@ -1,0 +1,320 @@
+{
+	"info": {
+		"_postman_id": "1b47f3b1-167f-409e-b1e5-9c18bdc11e63",
+		"name": "FirstIronHackApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3864093"
+	},
+	"item": [
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "GetStudentById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5005/api/students/652fe5823303ec85caf60c01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5005",
+							"path": [
+								"api",
+								"students",
+								"652fe5823303ec85caf60c01"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllStudents",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5005/api/students",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5005",
+							"path": [
+								"api",
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllStudentsByCohort",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5005/api/students/cohort/652fd7983303ec85caf60bef",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5005",
+							"path": [
+								"api",
+								"students",
+								"cohort",
+								"652fd7983303ec85caf60bef"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateNewStudent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Christine\",\r\n    \"lastName\": \"Clayton\",\r\n    \"email\": \"Here you need to enter a new email adress because its's unique\",\r\n    \"phone\": \"567-890-1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5005/api/students/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5005",
+							"path": [
+								"api",
+								"students",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateStudent",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:5005/api/students/652fe5823303ec85caf60c01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5005",
+							"path": [
+								"api",
+								"students",
+								"652fe5823303ec85caf60c01"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteStudent",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5005/api/students/652fe5823303ec85caf60c01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5005",
+							"path": [
+								"api",
+								"students",
+								"652fe5823303ec85caf60c01"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cohort",
+			"item": [
+				{
+					"name": "GetAllCohorts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5005/api/cohorts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5005",
+							"path": [
+								"api",
+								"cohorts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCohortById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5005/api/cohorts/652fd7983303ec85caf60bef",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5005",
+							"path": [
+								"api",
+								"cohorts",
+								"652fd7983303ec85caf60bef"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateCohort",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cohortSlug\": \"is unique enter new\",\r\n    \"cohortName\": \"FT WD PARIS 2023 07\",\r\n    \"programManager\": \"Sally Daher\",\r\n    \"leadTeacher\": \"Florian Aube\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5005/api/cohorts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5005",
+							"path": [
+								"api",
+								"cohorts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateCohort",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cohortSlug\": \"is unique enter new\",\r\n    \"cohortName\": \"FT WD PARIS 2023 07\",\r\n    \"programManager\": \"Tiago Daher\",\r\n    \"leadTeacher\": \"Florian Aube\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5005/api/cohorts/653129e9b371271841a38130",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5005",
+							"path": [
+								"api",
+								"cohorts",
+								"653129e9b371271841a38130"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteCohort",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cohortSlug\": \"is unique enter new\",\r\n    \"cohortName\": \"FT WD PARIS 2023 07\",\r\n    \"programManager\": \"Tiago Daher\",\r\n    \"leadTeacher\": \"Florian Aube\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5005/api/cohorts/653129e9b371271841a38130",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5005",
+							"path": [
+								"api",
+								"cohorts",
+								"653129e9b371271841a38130"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
