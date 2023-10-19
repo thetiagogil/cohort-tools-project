@@ -25,7 +25,7 @@ const options = {
       ],
   },
   // List of files to be processed
-  apis: ['./*.js'],
+  apis: ['./*.js', "./models/*.js"],
 };
 
 const swaggerSpec = swaggerJSDoc(options);
