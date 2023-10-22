@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
     res.status(200).json(student);
   }
   catch (error) {
-    res.status(500).json({ error })
+    next(error)
   }
 });
 
@@ -22,7 +22,7 @@ router.get("/cohort/:cohortId", async (req, res) => {
       res.status(200).json(students);
     }
     catch (error) {
-      res.status(500).json({ error })
+      next(error)
     }
   } else {
     res.status(400).json({ message: 'Not valid ObjectId' })
@@ -38,7 +38,7 @@ router.get("/:studentId", async (req, res) => {
       res.status(200).json(student);
     }
     catch (error) {
-      res.status(500).json({ error })
+      next(error)
     }
   } else {
     res.status(400).json({ message: 'Not valid ObjectId' })
@@ -51,7 +51,7 @@ router.post('/', async (req, res) => {
     res.status(201).json(student);
   }
   catch (error) {
-    res.status(500).json({ error })
+    next(error)
   }
 });
 
@@ -63,7 +63,7 @@ router.put('/:studentId', async (req, res) => {
       res.status(202).json(student);
     }
     catch (error) {
-      res.status(500).json({ error })
+      next(error)
     }
   } else {
     res.status(400).json({ message: 'Not valid ObjectId' })
@@ -78,7 +78,7 @@ router.delete('/:studentId', async (req, res) => {
       res.status(202).json({ message: 'No Content' });
     }
     catch (error) {
-      res.status(500).json({ error })
+      next(error)
     }
   } else {
     res.status(400).json({ message: 'Not valid ObjectId' })
