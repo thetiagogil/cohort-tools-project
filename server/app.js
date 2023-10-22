@@ -17,6 +17,9 @@ require('./config')(app)
 const indexRoutes = require('./routes/index.routes')
 app.use('/api', indexRoutes)
 
+const authRoutes = require('./routes/auth.routes')
+app.use('/auth', authRoutes)
+
 app.get("/docs", (req, res) => {
   res.sendFile(__dirname + "/views/docs.html");
 });
