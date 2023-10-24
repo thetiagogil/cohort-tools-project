@@ -2,6 +2,7 @@ const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User.model');
+const isAuthenticated = require('../middleware/routerGuard.middleware');
 
 // Signup route
 router.post('/signup', async (req, res, next) => {
@@ -52,6 +53,16 @@ router.post('/login', async (req, res, next) => {
             { expiresIn: '1d' , algorithm: 'HS256'}); // { expiresIn: '1d' } means that the token will be valid for 1 day
 
         res.status(200).json({ token });
+    } catch (error) {
+        next(error)
+    }
+});
+
+router.get('/verify', isAuthenticated, (req, res, next) => {
+    try {
+        const { token } = req.query;
+        const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
+        res.status(200).json({ message: 'Token is valid', user: decodedToken });
     } catch (error) {
         next(error)
     }
